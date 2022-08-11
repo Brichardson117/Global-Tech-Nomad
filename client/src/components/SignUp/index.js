@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import Button  from "@mui/material/Button";
 
 const SignUp = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });

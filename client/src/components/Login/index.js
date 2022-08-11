@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+import Button  from "@mui/material/Button";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -60,7 +61,7 @@ function Login(props) {
           />
         </div>
         <div className="loginSubmit">
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit </Button>
         </div>
       </form>
       {error && <div>Login failed</div>}
