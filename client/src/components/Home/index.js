@@ -106,8 +106,9 @@ function HomeMap() {
                 />
               </div>
               <div className="uk-card-body">
-                <h3 className="uk-card-title">{country.countryName}</h3>
+                <h3 className="uk-card-title">{country.countryName}{country.Flag}</h3>
                 <p>{country.description}</p>
+                <h4><strong>Capital:</strong>{country.capital}</h4>
               </div>
             </div>
           </div>
