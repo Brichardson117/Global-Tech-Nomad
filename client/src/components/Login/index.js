@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
-import Button  from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -18,54 +19,33 @@ function Login(props) {
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (error) {
-      return error
+      return error;
     }
   };
 
-    // update state based on form input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-          ...formState,
-          [name]: value,
-        });
-      };
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   return (
-    <div className="login">
-      <form onSubmit={handleFormSubmit}>
-        <h2 className="loginHeader"> Login to Get started:</h2>
-        <div className="loginUn">
-          <label>Email</label>
-          <br />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            value={formState.email}
-            onChange={handleChange}
-          />
-        </div>
-        <br />
-        <div className="loginPw">
-          <label>Password</label>
-          <br />
-          <input
-            type="password"
-            placeholder="******"
-            name="password"
-            id="password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="loginSubmit">
-          <Button type="submit">Submit </Button>
-        </div>
-      </form>
-      {error && <div>Login failed</div>}
-    </div>
+    <form>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="on"
+      >
+        <TextField id="outlined-basic" label="Email" variant="outlined" />
+        <TextField id="outlined-basic" label="Password" variant="outlined" />
+      </Box>
+    </form>
   );
 }
 

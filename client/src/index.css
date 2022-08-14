@@ -2,12 +2,15 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
 body {
   background-image: url(./images/map2.jpg);
   background-size: cover;
   background-attachment: fixed;
+
 }
 
 code {
