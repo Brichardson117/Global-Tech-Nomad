@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 
+
+
 const Header = () => {
 
   const logout = event => {
@@ -25,6 +27,7 @@ const Header = () => {
           <>
             <Link to="/Login">Login</Link>
             <Link to="/Signup">Signup</Link>
+            <Link to="/countries">Countries</Link>
           </>
         )}
       </nav>

@@ -4,6 +4,7 @@ import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Button from '@mui/material/Button'
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
@@ -43,6 +44,7 @@ const SignUp = () => {
   return (
     <Box>
       <form>
+        <label>Sign up</label>
         <Box
           component="form"
           sx={{
@@ -54,6 +56,8 @@ const SignUp = () => {
           <TextField id="outlined-basic" label="Name" variant="outlined" />
           <TextField id="outlined-basic" label="Email" variant="outlined" />
           <TextField id="outlined-basic" label="Password" variant="outlined" />
+          <br />
+          <Button size="large" variant="contained">Log in</Button>
         </Box>
       </form>
     </Box>

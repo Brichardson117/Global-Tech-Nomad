@@ -1,12 +1,15 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import CardCover from "@mui/joy/CardCover";
+import CardContent from "@mui/joy/CardContent";
+import Typography from "@mui/joy/Typography";
 import Grid from "@mui/material/Grid";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+
+
 
 function countryList() {
+  
   return [
     {
       countryName: "Japan",
@@ -70,12 +73,12 @@ function countryList() {
       image: require("../../images/countries/stockholm.jpg"),
     },
     {
-      countryName: "Israel",
+      countryName: "Australia",
       description:
-        "Although Israel isn’t a very big country, it outshines most countries when it comes to advancement in technology. How can that even be possible? Well, you must know that the Jewish nation is popular for its innovations in the agricultural and defense industry. Also, the country is one of the leading countries in the field of space science.",
-      capital: "Jerusalem",
-      Flag: "🇮🇱",
-      image: require("../../images/countries/jerusalem.webp"),
+        "Australia is as varied as it is enormous-- it is home to thriving cities, vast wilderness, and earnest, friendly people. Sydney is for sophisticates, with its famous opera house and annual Sculpture By the Sea outdoor art exhibits. Port Douglas makes a great base for snorkeling or diving the Great Barrier Reef, and quaint lighthouses keep vigil along the beaches of Byron Bay. Melbourne is a hub of rousing cricket activity, and the limestone pillars of the Pinnacles Desert are a natural wonder.",
+      capital: "Canberra",
+      Flag: "🇦🇺",
+      image: require("../../images/countries/australia.webp"),
     },
     {
       countryName: "China",
@@ -93,9 +96,61 @@ function countryList() {
       Flag: "🇨🇭",
       image: require("../../images/countries/bern.jpg"),
     },
+    {
+      countryName: "Mexico",
+      description:
+        "Mexico is relaxed and friendly. The highways are good, the healthcare is excellent and affordable, and the food is terrific. The immigration system is surprisingly uncomplicated, and long-term living in Mexico is possible for many retirees and remote workers—no lawyers or agents are needed.",
+      capital: "Mexico City",
+      Flag: "🇨🇲",
+      image: require("../../images/countries/Mexico.jpg"),
+    },
+    {
+      countryName: "Thailand",
+      description:
+        "Bordered with Andaman sea and gulf of Thailand, Thailand is a dream destination for every beach lover. Thailand tourism has everything a tourist could ask for, from an international holiday destination including, Gren-blue clean beaches, coral islands, mountains, shopping markets, Hindu temples, monasteries and never ending nightlife. If you are a sea food lover, then Thailand tour packages is just for you.",
+      capital: "Bangkok",
+      Flag: "🇹🇭",
+      image: require("../../images/countries/Thailand.jpg"),
+    },
   ];
 }
 
-function HomeMap() {
-  return <div>Brittney</div>;
-}
+
+
+
+const Countries = () => {
+  return (
+    <Box>
+      <Grid container spacing={2} className="uk-flex">
+        {countryList().map((countries) => (
+          <Grid
+            item
+            sm={6}
+            md={4}
+            sx={{ flexGrow: 1 }}
+            key={countries.countryName}
+          >
+            <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+              <CardCover>
+                <img src={countries.image} alt="" />
+              </CardCover>
+
+              <CardContent sx={{ justifyContent: "center", gap: 1 }}>
+                <Typography
+                  level="h6"
+                  fontWeight="lg"
+                  textColor="#fff"
+                  mt={{ xs: 12, sm: 18 }}
+                >
+                  {countries.countryName}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  );
+};
+
+export default Countries;

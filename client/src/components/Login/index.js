@@ -4,6 +4,7 @@ import { LOGIN_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -34,6 +35,7 @@ function Login(props) {
 
   return (
     <form>
+      <label>Login</label>
       <Box
         component="form"
         sx={{
@@ -44,7 +46,10 @@ function Login(props) {
       >
         <TextField id="outlined-basic" label="Email" variant="outlined" />
         <TextField id="outlined-basic" label="Password" variant="outlined" />
+        <br />
+        <Button size="large" variant="contained">Log in</Button>
       </Box>
+      
     </form>
   );
 }
