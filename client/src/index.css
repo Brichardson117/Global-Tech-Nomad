@@ -5,7 +5,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 /* HEADER SECTION*/
 
 .header {
@@ -14,7 +13,7 @@
   font-size: x-large;
   flex-wrap: wrap;
   margin-bottom: 5%;
-  border-bottom: 0.02cm solid rgba(160,160,160,.55);
+  border-bottom: 0.02cm solid rgba(160, 160, 160, 0.55);
 }
 .navigation {
   display: flex;
@@ -29,8 +28,16 @@
   color: black;
 }
 
+.title{
+  padding: 5%;
+}
+
+.carousel {
+  color: white;
+}
+
 .navigation a:hover {
-  color: aqua;
+  color: blue;
 }
 
 /* LOGIN COMPONENT */
@@ -47,58 +54,8 @@
 
 form {
   text-align: center;
-  background-color: hsla(208deg 100% 48% / 49%);
   font-size: xx-large;
-  color: blanchedalmond;
-  border: 20px solid blanchedalmond;
-}
-.loginUn {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.loginUn input {
-  width: 100%;
-  font-size: xx-large;
-}
-
-.loginUn input:hover {
-  width: 100%;
-  background-color: blue;
-  font-size: xx-large;
-}
-
-.loginPw {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.loginPw input {
-  width: 100%;
-  font-size: xx-large;
-}
-
-.loginPw input:hover {
-  width: 100%;
-  background-color: blue;
-  font-size: xx-large;
-}
-
-.loginSubmit button {
-  margin: 20px;
-  padding: 15px;
-  font-size: x-large;
-}
-
-.loginSubmit button:hover {
-  margin: 20px;
-  padding: 15px;
-  font-size: x-large;
-  background-color: blue;
-}
-
-.map-container {
-  height: 50vw;
+  border: 2px solid black;
 }
 
 .sidebar {

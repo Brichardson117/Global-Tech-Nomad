@@ -47,7 +47,7 @@ function Login(props) {
         <TextField id="outlined-basic" label="Email" variant="outlined" />
         <TextField id="outlined-basic" label="Password" variant="outlined" />
         <br />
-        <Button size="large" variant="contained">Log in</Button>
+        <Button size="large" variant="contained" color="success">Log in</Button>
       </Box>
       
     </form>

@@ -57,7 +57,7 @@ const SignUp = () => {
           <TextField id="outlined-basic" label="Email" variant="outlined" />
           <TextField id="outlined-basic" label="Password" variant="outlined" />
           <br />
-          <Button size="large" variant="contained">Log in</Button>
+          <Button size="large" variant="contained" color="success">Sign Up</Button>
         </Box>
       </form>
     </Box>
