@@ -5,6 +5,7 @@ import Auth from "../../utils/auth";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Modal from "react-bootstrap/Modal";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -32,25 +33,63 @@ function Login(props) {
       [name]: value,
     });
   };
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-    <form>
-      <label>Login</label>
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="on"
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch static backdrop modal
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
       >
-        <TextField id="outlined-basic" label="Email" variant="outlined" />
-        <TextField id="outlined-basic" label="Password" variant="outlined" />
-        <br />
-        <Button size="large" variant="contained" color="success">Log in</Button>
-      </Box>
-      
-    </form>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Box>
+            <form>
+              <label>Login</label>
+              <Box
+                component="form"
+                sx={{
+                  "& > :not(style)": { m: 1, width: "20ch" },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <TextField
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+                <TextField
+                  id="outlined-basic"
+                  label="Password"
+                  variant="outlined"
+                />
+                <br />
+                <Button size="large" variant="contained" color="success">
+                  Sign Up
+                </Button>
+              </Box>
+            </form>
+          </Box>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Sign Up</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 

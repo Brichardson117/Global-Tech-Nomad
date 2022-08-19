@@ -5,6 +5,7 @@ import Auth from "../../utils/auth";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button'
+import Modal from "react-bootstrap/Modal";
 
 const SignUp = () => {
   const [formState, setFormState] = useState({
@@ -41,14 +42,34 @@ const SignUp = () => {
     }
   };
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Box>
+<>
+      <Button variant="primary" onClick={handleShow}>
+        Launch static backdrop modal
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Sign Up</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Box>
       <form>
-        <label>Sign up</label>
+        <label>Sign Up</label>
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "20ch" },
           }}
           noValidate
           autoComplete="off"
@@ -61,6 +82,15 @@ const SignUp = () => {
         </Box>
       </form>
     </Box>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Sign Up</Button>
+        </Modal.Footer>
+      </Modal>
+      </>
   );
 };
 

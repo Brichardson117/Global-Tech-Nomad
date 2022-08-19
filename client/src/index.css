@@ -28,7 +28,7 @@
   color: black;
 }
 
-.title{
+.title {
   padding: 5%;
 }
 
@@ -41,16 +41,6 @@
 }
 
 /* LOGIN COMPONENT */
-
-.login {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.loginHeader {
-  margin: 20px 0;
-  color: blanchedalmond;
-}
 
 form {
   text-align: center;
@@ -81,6 +71,11 @@ form {
   .header nav {
     margin: 0 auto;
   }
+  .carousel {
+    color: white;
+    font-size: 12px;
+  }
+   
 }
 
 @media screen and (max-width: 800px) {
@@ -101,3 +96,5 @@ form {
     font-size: 35px;
   }
 }
+
+
