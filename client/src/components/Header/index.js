@@ -66,6 +66,7 @@ const Header = () => {
                       <TextField
                         id="outlined-basic"
                         label="Password"
+                        type="password"
                         variant="outlined"
                       />
                       <br />
