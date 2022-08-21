@@ -50,7 +50,7 @@ const SignUp = () => {
   return (
 <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        SignUp
       </Button>
 
       <Modal
@@ -87,7 +87,6 @@ const SignUp = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Sign Up</Button>
         </Modal.Footer>
       </Modal>
       </>

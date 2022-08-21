@@ -40,7 +40,7 @@ function Login(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        Login
       </Button>
 
       <Modal
@@ -86,7 +86,6 @@ function Login(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Sign Up</Button>
         </Modal.Footer>
       </Modal>
     </>
